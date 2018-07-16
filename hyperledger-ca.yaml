@@ -1,0 +1,31 @@
+version: "3"
+networks:
+  hyperledger-ov:
+    external:
+      name: hyperledger
+services:
+  ca:
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+    hostname: ca.lorachain.io
+    image: hyperledger/fabric-ca:1.2.0
+    networks:
+      hyperledger-ov:
+        aliases:
+        - ca_peerOrg1
+    environment:
+    - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+    - FABRIC_CA_SERVER_CA_NAME=ca-org1
+    - FABRIC_CA_SERVER_TLS_ENABLED=true
+    - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.lorachain.io-cert.pem
+    - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/38eb4af7b139dbccb24c24f43f79d2661b617892f3c1471cd7c8fd2e4fe6487b_sk
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.lorachain.io-cert.pem
+      --ca.keyfile /etc/hyperledger/fabric-ca-server-config/38eb4af7b139dbccb24c24f43f79d2661b617892f3c1471cd7c8fd2e4fe6487b_sk -b admin:adminpw
+      -d'
+    volumes:
+    - ./crypto-config/peerOrganizations/org1.lorachain.io/ca/:/etc/hyperledger/fabric-ca-server-config
+
