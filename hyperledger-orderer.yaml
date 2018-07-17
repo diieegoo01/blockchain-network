@@ -35,6 +35,6 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     volumes:
-    - ./channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+    - ./config/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
     - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer.lorachain.io/msp:/var/hyperledger/orderer/msp
     - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer.lorachain.io/tls/:/var/hyperledger/orderer/tls
