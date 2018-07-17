@@ -89,3 +89,37 @@ Centos: `yum install libtool-ltdl-devel`
 
 ```
 
+* Generate artifacts
+
+```
+  ./generate.sh -c
+```
+Se generan todos los certificados de la organización. en carpeta config/ y /crypto-config. Recordar cambiar la ruta del certificado _sk en docker composer del CA. Ejemplo: - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/46b93201b21aa6d399adf542dc9f3d890f2c8288c258bb99ad3aaf1dc889146d_sk
+
+* Attach to cli container
+
+```
+  docker exec -it $(docker ps --format "table {{.ID}}" -f "label=com.docker.stack.namespace=hyperledger-cli" | tail -1) bash
+```
+
+* Create a channel
+
+```
+  export CHANNEL_NAME=mychannel
+  export ORG=agiletech.vn
+  peer channel create -o orderer0.${ORG}:7050 -c $CHANNEL_NAME -f ./channel-artifacts/channel.tx --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/$ORG/orderers/orderer0.${ORG}/msp/tlscacerts/tlsca.${ORG}-cert.pem
+```
+
+* Join a channel
+
+```
+  peer channel join -b mychannel.block
+  peer channel list
+```
+
+* Install & Initiate Chaincode
+
+```
+  peer chaincode install -n mycc -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/sacc
+  peer chaincode instantiate -o orderer0.agiletech.vn:7050 --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/agiletech.vn/orderers/orderer0.agiletech.vn/msp/tlscacerts/tlsca.agiletech.vn-cert.pem -C $CHANNEL_NAME -n mycc -v 1.0 -c '{"Args":["a", "100"]}'
+```

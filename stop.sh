@@ -1,11 +1,10 @@
-#!/bin/bash
-#
-# Copyright IBM Corp All Rights Reserved
-#
-# SPDX-License-Identifier: Apache-2.0
-#
 # Exit on first error, print all commands.
 set -ev
 
-# Shut down the Docker containers that might be currently running.
-docker-compose -f docker-compose.yml stop
+docker stack rm hyperledger-zk
+docker stack rm hyperledger-kafka
+docker stack rm hyperledger-orderer
+docker stack rm hyperledger-couchdb
+docker stack rm hyperledger-peer
+docker stack rm hyperledger-ca
+docker stack rm hyperledger-cli
