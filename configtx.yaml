@@ -43,12 +43,6 @@ Organizations:
             # encoded in the genesis block in the Application section context
             - Host: peer0.org1.lorachain.io
               Port: 7051
-            - Host: peer1.org1.lorachain.io
-              Port: 7051
-            - Host: peer2.org1.lorachain.io
-              Port: 7051
-            - Host: peer3.org1.lorachain.io
-              Port: 7051
 
 ################################################################################
 #

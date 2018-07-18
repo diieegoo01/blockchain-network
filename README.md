@@ -99,7 +99,7 @@ Se generan todos los certificados de la organización. en carpeta config/ y /cry
 * Attach to cli container
 
 ```
-  docker exec -it $(docker ps --format "table {{.ID}}" -f "label=com.docker.stack.namespace=hyperledger-cli" | tail -1) bash
+  docker exec -it hyperledger-cli bash
 ```
 
 * Create a channel
@@ -107,7 +107,7 @@ Se generan todos los certificados de la organización. en carpeta config/ y /cry
 ```
   export CHANNEL_NAME=mychannel
   export ORG=agiletech.vn
-  peer channel create -o orderer0.${ORG}:7050 -c $CHANNEL_NAME -f ./channel-artifacts/channel.tx --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/$ORG/orderers/orderer0.${ORG}/msp/tlscacerts/tlsca.${ORG}-cert.pem
+  peer channel create -o orderer1.${ORG}:7050 -c $CHANNEL_NAME -f ./config/channel.tx --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/$ORG/orderers/orderer1.${ORG}/msp/tlscacerts/tlsca.${ORG}-cert.pem
 ```
 
 * Join a channel
