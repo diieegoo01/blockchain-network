@@ -4,21 +4,21 @@ networks:
     external:
       name: hyperledger
 services:
-  orderer0:
+  orderer1:
     deploy:
       replicas: 1
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
-    hostname: orderer.lorachain.io
+    hostname: orderer1.lorachain.io
     image: hyperledger/fabric-orderer:1.2.0
     networks:
       hyperledger-ov:
         aliases:
-        - orderer.lorachain.io
+        - orderer1.lorachain.io
     environment:
-    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=hyperledger-ov
+    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=hyperledger
     - ORDERER_GENERAL_LOGLEVEL=debug
     - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
     - ORDERER_GENERAL_GENESISMETHOD=file
@@ -36,5 +36,41 @@ services:
     command: orderer
     volumes:
     - ./config/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-    - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer.lorachain.io/msp:/var/hyperledger/orderer/msp
-    - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer.lorachain.io/tls/:/var/hyperledger/orderer/tls
+    - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer1.lorachain.io/msp:/var/hyperledger/orderer/msp
+    - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer1.lorachain.io/tls/:/var/hyperledger/orderer/tls
+
+  orderer2:
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+    hostname: orderer2.lorachain.io
+    image: hyperledger/fabric-orderer:1.2.0
+    networks:
+      hyperledger-ov:
+        aliases:
+        - orderer2.lorachain.io
+    environment:
+    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=hyperledger
+    - ORDERER_GENERAL_LOGLEVEL=debug
+    - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+    - ORDERER_GENERAL_GENESISMETHOD=file
+    - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
+    - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+    - ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/orderer/msp
+    - ORDERER_GENERAL_TLS_ENABLED=true
+    - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
+    - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
+    - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
+    - ORDERER_KAFKA_RETRY_SHORTINTERVAL=1s
+    - ORDERER_KAFAK_RETRY_SHORTTOTAL=30s
+    - ORDERER_KAFKA_VERBOSE=true
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric
+    command: orderer
+    volumes:
+    - ./config/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+    - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer2.lorachain.io/msp:/var/hyperledger/orderer/msp
+    - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer2.lorachain.io/tls/:/var/hyperledger/orderer/tls
+

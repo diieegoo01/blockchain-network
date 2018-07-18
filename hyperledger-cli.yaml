@@ -4,7 +4,7 @@ networks:
     external:
       name: hyperledger
 services:
-  cli:
+  cli-1:
     deploy:
       replicas: 1
       restart_policy:
@@ -15,7 +15,7 @@ services:
     networks:
       hyperledger-o:
         aliases:
-        - cli
+        - cli-1
     environment:
     - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=hyperledger
     - GOPATH=/opt/gopath
@@ -28,6 +28,39 @@ services:
     - CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.lorachain.io/peers/peer0.org1.lorachain.io/tls/server.crt
     - CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.lorachain.io/peers/peer0.org1.lorachain.io/tls/server.key
     - CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.lorachain.io/peers/peer0.org1.lorachain.io/tls/ca.crt
+    - CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.lorachain.io/users/Admin@org1.lorachain.io/msp/
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    command: sleep 3600
+    volumes:
+        - /var/run/:/host/var/run/
+        - ./chaincode/:/opt/gopath/src/github.com/hyperledger/fabric/examples/chaincode/go
+        - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
+        - ./config:/opt/gopath/src/github.com/hyperledger/fabric/peer/config
+
+  cli-2:
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+    image: hyperledger/fabric-tools:1.2.0
+    networks:
+      hyperledger-o:
+        aliases:
+        - cli-2
+    environment:
+    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=hyperledger
+    - GOPATH=/opt/gopath
+    - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+    - CORE_LOGGING_LEVEL=DEBUG
+    - CORE_PEER_ID=cli
+    - CORE_PEER_ADDRESS=peer1.org1.lorachain.io:7051
+    - CORE_PEER_LOCALMSPID=Org1MSP
+    - CORE_PEER_TLS_ENABLED=true
+    - CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.lorachain.io/peers/peer1.org1.lorachain.io/tls/server.crt
+    - CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.lorachain.io/peers/peer1.org1.lorachain.io/tls/server.key
+    - CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.lorachain.io/peers/peer1.org1.lorachain.io/tls/ca.crt
     - CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.lorachain.io/users/Admin@org1.lorachain.io/msp/
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: sleep 3600
