@@ -47,7 +47,7 @@ services:
     - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
     - KAFKA_DEFAULT_REPLICATION_FACTOR=3
     - KAFKA_MIN_INSYNC_REPLICAS=2
-    - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper3:2181
+    - KAFKA_ZOOKEEPER_CONNECT=zookeeper1:2181,zookeeper2:2181,zookeeper3:2181
     - KAFKA_BROKER_ID=2
     - constraint 'node.hostname == peer1'
 
@@ -71,7 +71,7 @@ services:
     - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
     - KAFKA_DEFAULT_REPLICATION_FACTOR=3
     - KAFKA_MIN_INSYNC_REPLICAS=2
-    - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper3:2181
+    - KAFKA_ZOOKEEPER_CONNECT=zookeeper1:2181,zookeeper2:2181,zookeeper3:2181
     - KAFKA_BROKER_ID=3
     - constraint 'node.hostname == peer1'
 
@@ -95,6 +95,6 @@ services:
     - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
     - KAFKA_DEFAULT_REPLICATION_FACTOR=3
     - KAFKA_MIN_INSYNC_REPLICAS=2
-    - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper3:2181
+    - KAFKA_ZOOKEEPER_CONNECT=zookeeper1:2181,zookeeper2:2181,zookeeper3:2181
     - KAFKA_BROKER_ID=4
     - constraint 'node.hostname == peer1'
