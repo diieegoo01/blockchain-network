@@ -41,13 +41,13 @@ Organizations:
             # AnchorPeers defines the location of peers which can be used
             # for cross org gossip communication.  Note, this value is only
             # encoded in the genesis block in the Application section context
+            - Host: peer0.org1.lorachain.io
+              Port: 7051
             - Host: peer1.org1.lorachain.io
               Port: 7051
             - Host: peer2.org1.lorachain.io
               Port: 7051
             - Host: peer3.org1.lorachain.io
-              Port: 7051
-            - Host: peer4.org1.lorachain.io
               Port: 7051
 
 ################################################################################

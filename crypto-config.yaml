@@ -43,12 +43,11 @@ PeerOrgs:
     #                 which obtains its values from the Spec.Hostname and
     #                 Org.Domain, respectively.
     # ---------------------------------------------------------------------------
-     Specs:
-       - Hostname: peer1 # implicitly "foo.org1.example.com"
-    #     CommonName: foo27.org5.example.com # overrides Hostname-based FQDN set above
-       - Hostname: peer2
-       - Hostname: peer3
-       - Hostname: peer4
+    Specs:
+      - Hostname: peer0 
+      - Hostname: peer1
+      - Hostname: peer2
+      - Hostname: peer3
     # ---------------------------------------------------------------------------
     # "Template"
     # ---------------------------------------------------------------------------
@@ -62,7 +61,7 @@ PeerOrgs:
     # name collisions
     # ---------------------------------------------------------------------------
     Template:
-      Count: 4
+      Count: 3
       # Start: 5
       # Hostname: {{.Prefix}}{{.Index}} # default
     # ---------------------------------------------------------------------------
