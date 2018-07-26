@@ -1,6 +1,6 @@
 version: "3"
 networks:
-  hyperledger-ov:
+  hyperledger:
     external:
       name: hyperledger
 services:
@@ -16,7 +16,7 @@ services:
     hostname: couchdb0.lorachain.io
     image: hyperledger/fabric-couchdb:0.4.10
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - couchdb0
     
@@ -32,7 +32,7 @@ services:
     hostname: couchdb1.lorachain.io
     image: hyperledger/fabric-couchdb:0.4.10
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - couchdb1
   
@@ -48,7 +48,7 @@ services:
     hostname: couchdb2.lorachain.io
     image: hyperledger/fabric-couchdb:0.4.10
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - couchdb2
   
@@ -64,6 +64,6 @@ services:
     hostname: couchdb3.lorachain.io
     image: hyperledger/fabric-couchdb:0.4.10
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - couchdb3

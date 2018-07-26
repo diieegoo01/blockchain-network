@@ -1,6 +1,6 @@
 version: "3"
 networks:
-  hyperledger-ov:
+  hyperledger:
     external:
       name: hyperledger
 services:
@@ -16,7 +16,7 @@ services:
     hostname: kafka1.lorachain.io
     image: hyperledger/fabric-kafka:0.4.10
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - kafka1.lorachain.io
     environment:
@@ -41,7 +41,7 @@ services:
     hostname: kafka2.lorachain.io
     image: hyperledger/fabric-kafka:0.4.10
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - kafka2.lorachain.io
     environment:
@@ -67,7 +67,7 @@ services:
     hostname: kafka3.lorachain.io
     image: hyperledger/fabric-kafka:0.4.10
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - kafka3.lorachain.io
     environment:
@@ -93,7 +93,7 @@ services:
     hostname: kafka4.lorachain.io
     image: hyperledger/fabric-kafka:0.4.10
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - kafka4.lorachain.io
     environment:

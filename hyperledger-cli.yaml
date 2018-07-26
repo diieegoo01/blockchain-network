@@ -1,6 +1,6 @@
 version: "3"
 networks:
-  hyperledger-o:
+  hyperledger:
     external:
       name: hyperledger
 services:
@@ -15,7 +15,7 @@ services:
         constraints: [node.hostname == peer2]
     image: hyperledger/fabric-tools:1.2.0
     networks:
-      hyperledger-o:
+      hyperledger:
         aliases:
         - cli-1
     environment:
@@ -50,7 +50,7 @@ services:
         constraints: [node.hostname == peer3]
     image: hyperledger/fabric-tools:1.2.0
     networks:
-      hyperledger-o:
+      hyperledger:
         aliases:
         - cli-2
     environment:

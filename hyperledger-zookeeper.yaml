@@ -1,6 +1,6 @@
 version: "3"
 networks:
-  hyperledger-ov:
+  hyperledger:
     external:
       name: hyperledger
 services:
@@ -16,7 +16,7 @@ services:
     hostname: zookeeper1
     image: hyperledger/fabric-zookeeper:0.4.10
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - zookeeper1.lorachain.io
     environment:
@@ -36,7 +36,7 @@ services:
     hostname: zookeeper2
     image: hyperledger/fabric-zookeeper:0.4.10
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - zookeeper2.lorachain.io
     environment:
@@ -57,7 +57,7 @@ services:
     hostname: zookeeper3
     image: hyperledger/fabric-zookeeper:0.4.10
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - zookeeper3.lorachain.io
     environment:

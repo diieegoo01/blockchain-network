@@ -1,6 +1,6 @@
 version: "3"
 networks:
-  hyperledger-ov:
+  hyperledger:
     external:
       name: hyperledger
 services:
@@ -17,7 +17,7 @@ services:
     hostname: peer0.org1.lorachain.io
     image: hyperledger/fabric-peer:1.2.0
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - peer0.org1.lorachain.io
     environment:
@@ -57,7 +57,7 @@ services:
     hostname: peer1.org1.lorachain.io
     image: hyperledger/fabric-peer:1.2.0
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - peer1.org1.lorachain.io
     environment:
@@ -97,7 +97,7 @@ services:
     hostname: peer2.org1.lorachain.io
     image: hyperledger/fabric-peer:1.2.0
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - peer2.org1.lorachain.io
     environment:
@@ -137,7 +137,7 @@ services:
     hostname: peer3.org1.lorachain.io
     image: hyperledger/fabric-peer:1.2.0
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - peer3.org1.lorachain.io
     environment:

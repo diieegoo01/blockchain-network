@@ -1,6 +1,6 @@
 version: "3"
 networks:
-  hyperledger-ov:
+  hyperledger:
     external:
       name: hyperledger
 services:
@@ -16,7 +16,7 @@ services:
     hostname: orderer1.lorachain.io
     image: hyperledger/fabric-orderer:1.2.0
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - orderer1.lorachain.io
     environment:
@@ -53,7 +53,7 @@ services:
     hostname: orderer2.lorachain.io
     image: hyperledger/fabric-orderer:1.2.0
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - orderer2.lorachain.io
     environment:

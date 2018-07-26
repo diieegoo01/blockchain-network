@@ -1,6 +1,6 @@
 version: "3"
 networks:
-  hyperledger-ov:
+  hyperledger:
     external:
       name: hyperledger
 services:
@@ -16,7 +16,7 @@ services:
     hostname: ca.lorachain.io
     image: hyperledger/fabric-ca:1.2.0
     networks:
-      hyperledger-ov:
+      hyperledger:
         aliases:
         - ca_peerOrg1
     environment:
