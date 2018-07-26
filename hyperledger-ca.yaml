@@ -24,9 +24,9 @@ services:
     - FABRIC_CA_SERVER_CA_NAME=ca-org1
     - FABRIC_CA_SERVER_TLS_ENABLED=true
     - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.lorachain.io-cert.pem
-    - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/4aee730b9fc9e411e7c51a5c222c5d58315f401de01db7d7b24daf1f541b74a0_sk
+    - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/40fdcbe0ab8446c547fed44f9da81462dd53e3e27a1d8b8ce5cb5df73b8adbc7_sk
     command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.lorachain.io-cert.pem
-      --ca.keyfile /etc/hyperledger/fabric-ca-server-config/4aee730b9fc9e411e7c51a5c222c5d58315f401de01db7d7b24daf1f541b74a0_sk -b admin:adminpw
+      --ca.keyfile /etc/hyperledger/fabric-ca-server-config/40fdcbe0ab8446c547fed44f9da81462dd53e3e27a1d8b8ce5cb5df73b8adbc7_sk -b admin:adminpw
       -d'
     volumes:
     - ./crypto-config/peerOrganizations/org1.lorachain.io/ca/:/etc/hyperledger/fabric-ca-server-config
