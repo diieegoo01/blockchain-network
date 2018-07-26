@@ -11,6 +11,9 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer2]
+      
     hostname: peer0.org1.lorachain.io
     image: hyperledger/fabric-peer:1.2.0
     networks:
@@ -49,6 +52,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer2]
     hostname: peer1.org1.lorachain.io
     image: hyperledger/fabric-peer:1.2.0
     networks:
@@ -87,6 +92,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer3]
     hostname: peer2.org1.lorachain.io
     image: hyperledger/fabric-peer:1.2.0
     networks:
@@ -125,6 +132,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer3]
     hostname: peer3.org1.lorachain.io
     image: hyperledger/fabric-peer:1.2.0
     networks:

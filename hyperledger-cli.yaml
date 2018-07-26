@@ -11,6 +11,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer2]
     image: hyperledger/fabric-tools:1.2.0
     networks:
       hyperledger-o:
@@ -44,6 +46,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer3]
     image: hyperledger/fabric-tools:1.2.0
     networks:
       hyperledger-o:

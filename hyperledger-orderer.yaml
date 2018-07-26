@@ -11,6 +11,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer2]
     hostname: orderer1.lorachain.io
     image: hyperledger/fabric-orderer:1.2.0
     networks:
@@ -46,6 +48,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer3]
     hostname: orderer2.lorachain.io
     image: hyperledger/fabric-orderer:1.2.0
     networks:

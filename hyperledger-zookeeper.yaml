@@ -11,6 +11,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer1]
     hostname: zookeeper1
     image: hyperledger/fabric-zookeeper:0.4.10
     networks:
@@ -29,6 +31,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer1]
     hostname: zookeeper2
     image: hyperledger/fabric-zookeeper:0.4.10
     networks:
@@ -48,6 +52,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer1]
     hostname: zookeeper3
     image: hyperledger/fabric-zookeeper:0.4.10
     networks:

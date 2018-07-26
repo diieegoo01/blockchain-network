@@ -11,6 +11,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer2]
     hostname: couchdb0.lorachain.io
     image: hyperledger/fabric-couchdb:0.4.10
     networks:
@@ -25,6 +27,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer2]
     hostname: couchdb1.lorachain.io
     image: hyperledger/fabric-couchdb:0.4.10
     networks:
@@ -39,6 +43,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer3]
     hostname: couchdb2.lorachain.io
     image: hyperledger/fabric-couchdb:0.4.10
     networks:
@@ -53,6 +59,8 @@ services:
         condition: on-failure
         delay: 5s
         max_attempts: 3
+      placement:
+        constraints: [node.hostname == peer3]
     hostname: couchdb3.lorachain.io
     image: hyperledger/fabric-couchdb:0.4.10
     networks:
