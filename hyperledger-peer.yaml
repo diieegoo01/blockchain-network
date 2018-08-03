@@ -50,8 +50,7 @@ services:
     - ./:/etc/hyperledger/configtx
     - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer0.org1.lorachain.io/msp:/etc/hyperledger/fabric/msp
     - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer0.org1.lorachain.io/tls:/etc/hyperledger/fabric/tls
-    depends_on:
-      - couchdb0
+ 
 
   peer1_org1:
     deploy:
@@ -99,8 +98,7 @@ services:
       - ./:/etc/hyperledger/configtx
       - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer1.org1.lorachain.io/msp:/etc/hyperledger/fabric/msp
       - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer1.org1.lorachain.io/tls:/etc/hyperledger/fabric/tls
-    depends_on:
-      - couchdb1
+
 
   peer2_org1:
     deploy:
@@ -147,8 +145,7 @@ services:
       - ./:/etc/hyperledger/configtx
       - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer2.org1.lorachain.io/msp:/etc/hyperledger/fabric/msp
       - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer2.org1.lorachain.io/tls:/etc/hyperledger/fabric/tls
-      depends_on:
-      - couchdb2
+
   peer3_org1:
     deploy:
       replicas: 1
@@ -194,6 +191,5 @@ services:
     - ./:/etc/hyperledger/configtx
     - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer3.org1.lorachain.io/msp:/etc/hyperledger/fabric/msp
     - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer3.org1.lorachain.io/tls:/etc/hyperledger/fabric/tls
-    depends_on:
-      - couchdb3
+
 
