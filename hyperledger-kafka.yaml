@@ -20,7 +20,7 @@ services:
         aliases:
         - kafka1.lorachain.io
     environment:
-    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=tutorial-network_default
+    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=composer_default
     - KAFKA_MESSAGE_MAX_BYTES=103809024
     - KAFKA_REPLICA_FETCH_MAX_BYTES=103809024
     - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
@@ -44,7 +44,7 @@ services:
         aliases:
         - kafka2.lorachain.io
     environment:
-    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=tutorial-network_default
+    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=composer_default
     - KAFKA_MESSAGE_MAX_BYTES=103809024
     - KAFKA_REPLICA_FETCH_MAX_BYTES=103809024
     - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
@@ -69,7 +69,7 @@ services:
         aliases:
         - kafka3.lorachain.io
     environment:
-    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=tutorial-network_default
+    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=composer_default
     - KAFKA_MESSAGE_MAX_BYTES=103809024
     - KAFKA_REPLICA_FETCH_MAX_BYTES=103809024
     - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false
@@ -95,7 +95,7 @@ services:
         aliases:
         - kafka4.lorachain.io
     environment:
-    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=tutorial-network_default
+    - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=composer_default
     - KAFKA_MESSAGE_MAX_BYTES=103809024
     - KAFKA_REPLICA_FETCH_MAX_BYTES=103809024
     - KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE=false

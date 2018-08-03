@@ -101,7 +101,7 @@ Se generan todos los certificados de la organización. en carpeta config/ y /cry
 * Create a channel
 
 ```
-  export CHANNEL_NAME=mychannel
+  export CHANNEL_NAME=composer
   export ORG=lorachain.io
   peer channel create -o orderer1.${ORG}:7050 -c $CHANNEL_NAME -f ./config/channel.tx --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/$ORG/orderers/orderer1.${ORG}/msp/tlscacerts/tlsca.${ORG}-cert.pem
 ```
