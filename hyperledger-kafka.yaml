@@ -28,7 +28,6 @@ services:
     - KAFKA_MIN_INSYNC_REPLICAS=2
     - KAFKA_ZOOKEEPER_CONNECT=zookeeper1:2181,zookeeper2:2181,zookeeper3:2181
     - KAFKA_BROKER_ID=1
-    - constraint 'node.hostname == peer1'
   kafka2:
     deploy:
       replicas: 1
@@ -53,7 +52,6 @@ services:
     - KAFKA_MIN_INSYNC_REPLICAS=2
     - KAFKA_ZOOKEEPER_CONNECT=zookeeper1:2181,zookeeper2:2181,zookeeper3:2181
     - KAFKA_BROKER_ID=2
-    - constraint 'node.hostname == peer1'
 
   kafka3:
     deploy:

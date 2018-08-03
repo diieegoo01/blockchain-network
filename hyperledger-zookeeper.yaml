@@ -23,7 +23,7 @@ services:
     - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=tutorial-network_default
     - ZOO_MY_ID=1
     - ZOO_SERVERS=server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
-    - constraint 'node.hostname == peer2'
+
   zookeeper2:
     deploy:
       replicas: 1
@@ -43,7 +43,6 @@ services:
     - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=tutorial-network_default
     - ZOO_MY_ID=2
     - ZOO_SERVERS=server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
-    - constraint 'node.hostname == peer2'
 
   zookeeper3:
     deploy:
@@ -64,4 +63,3 @@ services:
     - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=tutorial-network_default
     - ZOO_MY_ID=3
     - ZOO_SERVERS=server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
-    - constraint 'node.hostname == peer2'
