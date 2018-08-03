@@ -124,3 +124,11 @@ Se generan todos los certificados de la organización. en carpeta config/ y /cry
   peer chaincode install -n mycc -v 1.0 -p github.com/hyperledger/fabric/examples/chaincode/go/sacc
   peer chaincode instantiate -o orderer1.lorachain.io:7050 --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/lorachain.io/orderers/orderer1.lorachain.io/msp/tlscacerts/tlsca.lorachain.io-cert.pem -C $CHANNEL_NAME -n mycc -v 1.0 -c '{"Args":["a", "100"]}'
 ```
+
+
+## Composer
+
+```
+composer card create -p connection.json -u PeerAdmin -c /home/diego/blockchain-network/crypto-config/peerOrganizations/org1.lorachain.io/users/Admin@org1.lorachain.io/msp/signcerts/Admin@org1.lorachain.io-cert.pem -k /home/diego/blockchain-network/crypto-config/peerOrganizations/org1.lorachain.io/users/Admin@org1.lorachain.io/msp/keystore/340f6c5a51298b46b875820a86abde2d0a0a29c6ee5836b6c44e730cd918175d_sk -r PeerAdmin -r ChannelAdmin
+
+```

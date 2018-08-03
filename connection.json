@@ -1,4 +1,4 @@
-{ "name": "fabric-network", "x-type": "hlfv11", "version": "1.0.0",
+{ "name": "fabric-network", "x-type": "hlfv1", "version": "1.0.0",
     "peers": { "peer0.org1.lorachain.io": { "url": "grpc://localhost:7051", "eventUrl": "grpc://localhost:7053" },
             "peer1.org1.lorachain.io": { "url": "grpc://localhost:8051", "eventUrl": "grpc://localhost:8053" },
             "peer2.org1.lorachain.io": { "url": "grpc://localhost:9051", "eventUrl": "grpc://localhost:9053" },
