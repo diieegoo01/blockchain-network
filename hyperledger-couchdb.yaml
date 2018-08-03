@@ -70,7 +70,7 @@ services:
     hostname: couchdb3.lorachain.io
     image: hyperledger/fabric-couchdb:0.4.10
     ports:
-      - 6984:5984
+      - 8984:5984
     networks:
       hyperledger:
         aliases:
