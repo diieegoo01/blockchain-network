@@ -7,7 +7,7 @@
     "orderers": { "orderer1.lorachain.io": { "url": "grpc://orderer1.lorachain.io:7050" },
                 "orderer2.lorachain.io": { "url": "grpc://orderer2.lorachain.io:7050" } },
     "organizations": { "Org1": { "mspid": "Org1MSP", "peers": [ "peer0.org1.lorachain.io", "peer1.org1.lorachain.io","peer2.org1.lorachain.io","peer3.org1.lorachain.io"], "certificateAuthorities": [ "ca.lorachain.io" ] } }, 
-    "channels": { "composer": { "orderers": [ "orderer1.lorachain.io", "orderer2.lorachain.io"], "peers": { "peer0.org1.lorachain.io": { "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true },
+    "channels": { "mychannel": { "orderers": [ "orderer1.lorachain.io", "orderer2.lorachain.io"], "peers": { "peer0.org1.lorachain.io": { "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true },
                                                                                     "peer1.org1.lorachain.io": { "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true },
                                                                                     "peer2.org1.lorachain.io": { "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true },
                                                                                     "peer3.org1.lorachain.io": { "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true } } } },
