@@ -26,7 +26,6 @@ services:
     - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
     - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
     - ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/orderer/msp
-    - ORDERER_GENERAL_TLS_ENABLED=true
     - ORDERER_KAFKA_RETRY_SHORTINTERVAL=1s
     - ORDERER_KAFAK_RETRY_SHORTTOTAL=30s
     - ORDERER_KAFKA_VERBOSE=true
