@@ -25,6 +25,8 @@ services:
     - FABRIC_CA_SERVER_TLS_ENABLED=true
     - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.lorachain.io-cert.pem
     - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/40fdcbe0ab8446c547fed44f9da81462dd53e3e27a1d8b8ce5cb5df73b8adbc7_sk
+    ports:
+      - "7054:7054"
     command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.lorachain.io-cert.pem
       --ca.keyfile /etc/hyperledger/fabric-ca-server-config/40fdcbe0ab8446c547fed44f9da81462dd53e3e27a1d8b8ce5cb5df73b8adbc7_sk -b admin:adminpw
       -d'
