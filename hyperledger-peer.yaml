@@ -23,13 +23,9 @@ services:
     environment:
     - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
     - CORE_LOGGING_LEVEL=DEBUG
-    - CORE_PEER_TLS_ENABLED=true
     - CORE_PEER_GOSSIP_USELEADERELECTION=true
     - CORE_PEER_GOSSIP_ORGLEADER=false
     - CORE_PEER_PROFILE_ENABLED=true
-    - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
-    - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
-    - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
     - CORE_PEER_ID=peer0.org1.lorachain.io
     - CORE_PEER_ADDRESS=peer0.org1.lorachain.io:7051
     - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.lorachain.io:7051
@@ -53,7 +49,6 @@ services:
     - /var/run/:/host/var/run/
     - ./:/etc/hyperledger/configtx
     - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer0.org1.lorachain.io/msp:/etc/hyperledger/fabric/msp
-    - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer0.org1.lorachain.io/tls:/etc/hyperledger/fabric/tls
  
 
   peer1_org1:
@@ -74,13 +69,9 @@ services:
     environment:
     - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
     - CORE_LOGGING_LEVEL=DEBUG
-    - CORE_PEER_TLS_ENABLED=true
     - CORE_PEER_GOSSIP_USELEADERELECTION=true
     - CORE_PEER_GOSSIP_ORGLEADER=false
     - CORE_PEER_PROFILE_ENABLED=true
-    - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
-    - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
-    - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
     - CORE_PEER_ID=peer1.org1.lorachain.io
     - CORE_PEER_ADDRESS=peer1.org1.lorachain.io:7051
     - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org1.lorachain.io:7051
@@ -105,7 +96,7 @@ services:
       - /var/run/:/host/var/run/
       - ./:/etc/hyperledger/configtx
       - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer1.org1.lorachain.io/msp:/etc/hyperledger/fabric/msp
-      - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer1.org1.lorachain.io/tls:/etc/hyperledger/fabric/tls
+
 
 
   peer2_org1:
@@ -126,13 +117,9 @@ services:
     environment:
     - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
     - CORE_LOGGING_LEVEL=DEBUG
-    - CORE_PEER_TLS_ENABLED=true
     - CORE_PEER_GOSSIP_USELEADERELECTION=true
     - CORE_PEER_GOSSIP_ORGLEADER=false
     - CORE_PEER_PROFILE_ENABLED=true
-    - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
-    - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
-    - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
     - CORE_PEER_ID=peer2.org1.lorachain.io
     - CORE_PEER_ADDRESS=peer2.org1.lorachain.io:7051
     - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.org1.lorachain.io:7051
@@ -156,7 +143,6 @@ services:
       - /var/run/:/host/var/run/
       - ./:/etc/hyperledger/configtx
       - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer2.org1.lorachain.io/msp:/etc/hyperledger/fabric/msp
-      - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer2.org1.lorachain.io/tls:/etc/hyperledger/fabric/tls
 
   peer3_org1:
     deploy:
@@ -176,13 +162,9 @@ services:
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       - CORE_LOGGING_LEVEL=DEBUG
-      - CORE_PEER_TLS_ENABLED=true
       - CORE_PEER_GOSSIP_USELEADERELECTION=true
       - CORE_PEER_GOSSIP_ORGLEADER=false
       - CORE_PEER_PROFILE_ENABLED=true
-      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
-      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
-      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
       - CORE_PEER_ID=peer3.org1.lorachain.io
       - CORE_PEER_ADDRESS=peer3.org1.lorachain.io:7051
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer3.org1.lorachain.io:7051
@@ -206,6 +188,5 @@ services:
     - /var/run/:/host/var/run/
     - ./:/etc/hyperledger/configtx
     - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer3.org1.lorachain.io/msp:/etc/hyperledger/fabric/msp
-    - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer3.org1.lorachain.io/tls:/etc/hyperledger/fabric/tls
 
 

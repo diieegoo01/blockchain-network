@@ -11,8 +11,7 @@
     "certificateAuthorities": { 
             "ca.lorachain.io": { "url": "http://localhost:7054", "caName": "ca-org1" }
              },
-    "orderers": { "orderer1.lorachain.io": { "url": "grpc://localhost:7050" },
-                "orderer2.lorachain.io": { "url": "grpc://localhost:7050" }
+    "orderers": { "orderer1.lorachain.io": { "url": "grpc://localhost:7050" }
                 },
     "organizations": { 
             "Org1": { 
