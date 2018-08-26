@@ -1,14 +1,34 @@
-{ "name": "fabric-network", "x-type": "hlfv1", "version": "1.0.0",
-    "peers": { "peer0.org1.lorachain.io": { "url": "grpc://localhost:7051", "eventUrl": "grpc://localhost:7053" },
-            "peer1.org1.lorachain.io": { "url": "grpc://localhost:8051", "eventUrl": "grpc://localhost:8053" },
-            "peer2.org1.lorachain.io": { "url": "grpc://localhost:9051", "eventUrl": "grpc://localhost:9053" },
-            "peer3.org1.lorachain.io": { "url": "grpc://localhost:10051", "eventUrl": "grpc://localhost:10053" }},
-    "certificateAuthorities": { "ca.lorachain.io": { "url": "http://localhost:7054", "caName": "ca-org1" } },
-    "orderers": { "orderer1.lorachain.io": { "url": "grpc://localhost:7050" },
-                "orderer2.lorachain.io": { "url": "grpc://localhost:7050" } },
-    "organizations": { "Org1": { "mspid": "Org1MSP", "peers": [ "peer0.org1.lorachain.io", "peer1.org1.lorachain.io","peer2.org1.lorachain.io","peer3.org1.lorachain.io"], "certificateAuthorities": [ "ca.lorachain.io" ] } }, 
-    "channels": { "mychannel": { "orderers": [ "orderer1.lorachain.io", "orderer2.lorachain.io"], "peers": { "peer0.org1.lorachain.io": { "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true },
-                                                                                    "peer1.org1.lorachain.io": { "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true },
-                                                                                    "peer2.org1.lorachain.io": { "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true },
-                                                                                    "peer3.org1.lorachain.io": { "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true } } } },
-    "client": { "organization": "Org1", "connection": { "timeout": { "peer": { "endorser": "300", "eventHub": "300", "eventReg": "300" }, "orderer": "300" } } } }   
+{ "name": "fabric-network", 
+        "x-type": "hlfv1", 
+        "version": "1.0.0",
+        "peers": { 
+                "peer0.org1.lorachain.io": 
+                { "url": "grpcs://localhost:7051", "eventUrl": "grpcs://localhost:7053" },
+                "peer1.org1.lorachain.io": { "url": "grpcs://localhost:8051", "eventUrl": "grpcs://localhost:8053" },
+                "peer2.org1.lorachain.io": { "url": "grpcs://localhost:9051", "eventUrl": "grpcs://localhost:9053" },
+                "peer3.org1.lorachain.io": { "url": "grpcs://localhost:10051", "eventUrl": "grpcs://localhost:10053" }
+                },
+    "certificateAuthorities": { 
+            "ca.lorachain.io": { "url": "http://localhost:7054", "caName": "ca-org1" }
+             },
+    "orderers": { "orderer1.lorachain.io": { "url": "grpcs://localhost:7050" },
+                "orderer2.lorachain.io": { "url": "grpcs://localhost:7050" }},
+    "organizations": { 
+            "Org1": { 
+                    "mspid": "Org1MSP",
+                     "peers": [ "peer0.org1.lorachain.io", "peer1.org1.lorachain.io","peer2.org1.lorachain.io","peer3.org1.lorachain.io"], 
+                     "certificateAuthorities": [ "ca.lorachain.io" ] }
+                      }, 
+    "channels": { "mychannel": 
+                { "orderers": [ "orderer1.lorachain.io", "orderer2.lorachain.io"], 
+                "peers": { "peer0.org1.lorachain.io": { "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true },
+                        "peer1.org1.lorachain.io": { "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true },
+                        "peer2.org1.lorachain.io": { "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true },
+                        "peer3.org1.lorachain.io": { "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true } 
+                        } 
+                } 
+        },
+    "client": { 
+            "organization": "Org1", 
+            "connection": { 
+                    "timeout": { "peer": { "endorser": "300", "eventHub": "300", "eventReg": "300" }, "orderer": "300" } } } }   
