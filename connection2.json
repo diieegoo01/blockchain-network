@@ -93,11 +93,24 @@
         }
     },
     "certificateAuthorities": {
-        "ca.org1.example.com": {
+        "ca.lorachain.io": {
             "url": "https://localhost:7054",
             "caName": "ca-org1",
             "httpOptions": {
                 "verify": false
+            }
+        }
+    },
+    "client": {
+        "organization": "Org1",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300",
+                    "eventHub": "300",
+                    "eventReg": "300"
+                },
+                "orderer": "300"
             }
         }
     }
