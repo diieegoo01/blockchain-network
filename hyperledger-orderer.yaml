@@ -35,6 +35,7 @@ services:
     volumes:
     - ./config/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
     - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer1.lorachain.io/msp:/var/hyperledger/orderer/msp
+    - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer2.lorachain.io/tls/:/var/hyperledger/orderer/tls
 
   orderer2:
     deploy:
@@ -66,4 +67,5 @@ services:
     volumes:
     - ./config/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
     - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer2.lorachain.io/msp:/var/hyperledger/orderer/msp
+    - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer2.lorachain.io/tls/:/var/hyperledger/orderer/tls
 
