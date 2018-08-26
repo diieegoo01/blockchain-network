@@ -42,6 +42,10 @@ services:
     - CORE_CHAINCODE_LOGGING_LEVEL=DEBUG
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
+    depends_on:
+      - orderer1.lorachain.io
+      - orderer2.lorachain.io
+      - couchdb0
     ports:
       - 7051:7051
       - 7053:7053
@@ -89,6 +93,10 @@ services:
     - CORE_CHAINCODE_LOGGING_LEVEL=DEBUG
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
+    depends_on:
+      - orderer1.lorachain.io
+      - orderer2.lorachain.io
+      - couchdb1
     ports:
       - 8051:7051
       - 8053:7053
@@ -137,6 +145,10 @@ services:
     - CORE_CHAINCODE_LOGGING_LEVEL=DEBUG
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
+    depends_on:
+      - orderer1.lorachain.io
+      - orderer2.lorachain.io
+      - couchdb2
     ports:
       - 9051:7051
       - 9053:7053
@@ -183,6 +195,10 @@ services:
       - CORE_CHAINCODE_LOGGING_LEVEL=DEBUG
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
+    depends_on:
+      - orderer1.lorachain.io
+      - orderer2.lorachain.io
+      - couchdb3
     ports:
       - 10051:7051
       - 10053:7053
