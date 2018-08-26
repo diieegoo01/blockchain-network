@@ -49,7 +49,8 @@ services:
     - /var/run/:/host/var/run/
     - ./:/etc/hyperledger/configtx
     - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer0.org1.lorachain.io/msp:/etc/hyperledger/fabric/msp
- 
+    - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
+    - ./config:/opt/gopath/src/github.com/hyperledger/fabric/peer/config 
 
   peer1_org1:
     deploy:
@@ -96,7 +97,8 @@ services:
       - /var/run/:/host/var/run/
       - ./:/etc/hyperledger/configtx
       - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer1.org1.lorachain.io/msp:/etc/hyperledger/fabric/msp
-
+      - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
+      - ./config:/opt/gopath/src/github.com/hyperledger/fabric/peer/config
 
 
   peer2_org1:
@@ -143,6 +145,8 @@ services:
       - /var/run/:/host/var/run/
       - ./:/etc/hyperledger/configtx
       - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer2.org1.lorachain.io/msp:/etc/hyperledger/fabric/msp
+      - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
+      - ./config:/opt/gopath/src/github.com/hyperledger/fabric/peer/config
 
   peer3_org1:
     deploy:
@@ -188,5 +192,7 @@ services:
     - /var/run/:/host/var/run/
     - ./:/etc/hyperledger/configtx
     - ./crypto-config/peerOrganizations/org1.lorachain.io/peers/peer3.org1.lorachain.io/msp:/etc/hyperledger/fabric/msp
+    - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
+    - ./config:/opt/gopath/src/github.com/hyperledger/fabric/peer/config
 
 
