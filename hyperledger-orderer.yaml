@@ -28,6 +28,7 @@ services:
       - 7050:7050
     volumes:
         - ./:/etc/hyperledger/configtx
+        - ./config/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
         - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer1.lorachain.io/msp:/etc/hyperledger/msp/orderer/msp
     networks:
       hyperledger:
