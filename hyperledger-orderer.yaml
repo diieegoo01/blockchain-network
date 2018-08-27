@@ -13,7 +13,7 @@ services:
         max_attempts: 3
       placement:
         constraints: [node.hostname == peer2]
-    hostname: orderer.lorachain.io
+    hostname: orderer1.lorachain.io
     image: hyperledger/fabric-orderer:1.2.0
     environment:
       - ORDERER_GENERAL_LOGLEVEL=debug
@@ -28,8 +28,8 @@ services:
       - 7050:7050
     volumes:
         - ./:/etc/hyperledger/configtx
-        - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer.lorachain.io/msp:/etc/hyperledger/msp/orderer/msp
+        - ./crypto-config/ordererOrganizations/lorachain.io/orderers/orderer1.lorachain.io/msp:/etc/hyperledger/msp/orderer/msp
     networks:
       hyperledger:
         aliases:
-        - orderer.lorachain.io
+        - orderer1.lorachain.io
