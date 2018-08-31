@@ -14,7 +14,7 @@ services:
       placement:
         constraints: [node.hostname == peer2]
     hostname: orderer1.lorachain.io
-    image: hyperledger/fabric-orderer:1.2.0
+    image: hyperledger/fabric-orderer:1.1.0
     networks:
       hyperledger:
         aliases:
@@ -50,7 +50,7 @@ services:
       placement:
         constraints: [node.hostname == peer3]
     hostname: orderer2.lorachain.io
-    image: hyperledger/fabric-orderer:1.2.0
+    image: hyperledger/fabric-orderer:1.1.0
     networks:
       hyperledger:
         aliases:
