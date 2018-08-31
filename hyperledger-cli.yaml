@@ -13,7 +13,7 @@ services:
         max_attempts: 3
       placement:
         constraints: [node.hostname == peer2]
-    image: hyperledger/fabric-tools:1.2.0
+    image: hyperledger/fabric-tools:x86_64-1.1.1
     networks:
       hyperledger:
         aliases:
@@ -51,7 +51,7 @@ services:
         max_attempts: 3
       placement:
         constraints: [node.hostname == peer3]
-    image: hyperledger/fabric-tools:1.2.0
+    image: hyperledger/fabric-tools:x86_64-1.1.1
     networks:
       hyperledger:
         aliases:
