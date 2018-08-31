@@ -14,7 +14,7 @@ services:
       placement:
         constraints: [node.hostname == peer1]
     hostname: ca.lorachain.io
-    image: hyperledger/fabric-ca:x86_64-1.1.1
+    image: hyperledger/fabric-ca:x86_64-1.1.0
     networks:
       hyperledger:
         aliases:
